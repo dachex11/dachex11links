@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ All Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ff9a3c 0%, #ff5e62 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        
+        /* Фоновое изображение хаори */
+        .haori-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/564x/58/93/38/589338301265846843.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.45;
+            z-index: 0;
+        }
+        
+        /* Виньетка для лучшей читаемости */
+        .vignette {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+        
+        /* Эффект молнии */
+        .lightning {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(
+                to right,
+                transparent 20%,
+                rgba(255, 255, 255, 0.4) 40%,
+                transparent 60%,
+                rgba(255, 255, 255, 0.4) 80%,
+                transparent 100%
+            );
+            background-size: 200% 100%;
+            animation: lightning 6s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+        
+        @keyframes lightning {
+            0% { background-position: 150% 0; }
+            100% { background-position: -50% 0; }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            max-width: 500px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 
+                0 15px 35px rgba(255, 80, 0, 0.4),
+                inset 0 5px 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 
+                0 0 30px rgba(255, 157, 0, 0.8),
+                inset 0 0 20px rgba(255, 230, 0, 0.8);
+            border: 3px solid #fff;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 3s infinite;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: brightness(1.05) contrast(1.1);
+        }
+        
+        .logo::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 40%, rgba(255, 230, 0, 0.4) 100%);
+            z-index: 2;
+        }
+        
+        .logo::after {
+            content: "⚡";
+            position: absolute;
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 0 0 20px #ffd700;
+            animation: blink 1.8s infinite;
+            z-index: 3;
+            transform: rotate(-15deg);
+        }
+        
+        .title {
+            color: #5a1d00;
+            font-size: 2.6rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 
+                2px 2px 4px rgba(255, 215, 0, 0.8),
+                0 0 10px rgba(255, 100, 0, 0.5);
+            letter-spacing: 3px;
+            position: relative;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        .title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, #ffd700, #ff5500, #ffd700);
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(255, 100, 0, 0.6);
+        }
+        
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            position: relative;
+            overflow: hidden;
+            animation: float 4s ease-in-out infinite;
+            animation-delay: calc(0.2s * var(--i));
+        }
+        
+        .btn:nth-child(1) { --i: 1; }
+        .btn:nth-child(2) { --i: 2; }
+        .btn:nth-child(3) { --i: 3; }
+        .btn:nth-child(4) { --i: 4; }
+        .btn:nth-child(5) { --i: 5; }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .btn i {
+            margin-right: 15px;
+            font-size: 2.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Кнопка YouTube */
+        .youtube {
+            background: linear-gradient(135deg, #ff0000 0%, #b80000 100%);
+            color: white;
+        }
+        
+        /* Кнопка Telegram */
+        .telegram {
+            background: linear-gradient(135deg, #2aabee 0%, #1e87b0 100%);
+            color: white;
+        }
+        
+        /* Кнопка Twitch */
+        .twitch {
+            background: linear-gradient(135deg, #9146ff 0%, #6a20c5 100%);
+            color: white;
+        }
+        
+        /* Кнопка TikTok */
+        .tiktok {
+            background: linear-gradient(135deg, #000000 0%, #25f4ee 50%, #fe2c55 100%);
+            color: white;
+        }
+        
+        /* Кнопка Предложка */
+        .offer {
+            background: linear-gradient(135deg, #ffd700 0%, #ff9a00 100%);
+            color: #5a1d00;
+            font-weight: 800;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            color: #5a1d00;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-shadow: 0 1px 3px rgba(255, 215, 0, 0.8);
+            letter-spacing: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+        
+        /* Анимации */
+        @keyframes pulse {
+            0% { transform: scale(0.98); box-shadow: 0 0 20px rgba(255, 157, 0, 0.6); }
+            50% { transform: scale(1.03); box-shadow: 0 0 50px rgba(255, 100, 0, 0.9); }
+            100% { transform: scale(0.98); box-shadow: 0 0 20px rgba(255, 157, 0, 0.6); }
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        
+        /* Элементы молний */
+        .thunder-element {
+            position: absolute;
+            font-size: 2.5rem;
+            color: rgba(255, 230, 0, 0.7);
+            text-shadow: 0 0 15px #ffd700;
+            z-index: 3;
+            animation: blink 2s infinite;
+            animation-delay: calc(0.3s * var(--d));
+            filter: drop-shadow(0 0 5px rgba(255, 100, 0, 0.8));
+        }
+        
+        .thunder-element:nth-child(1) { top: 10%; left: 15%; --d: 1; }
+        .thunder-element:nth-child(2) { top: 20%; right: 10%; --d: 2; }
+        .thunder-element:nth-child(3) { bottom: 15%; left: 20%; --d: 3; }
+        .thunder-element:nth-child(4) { bottom: 25%; right: 15%; --d: 4; }
+        .thunder-element:nth-child(5) { top: 40%; left: 5%; --d: 5; }
+        .thunder-element:nth-child(6) { bottom: 5%; right: 25%; --d: 6; }
+        
+        /* Эффект падающих листьев */
+        .leaf {
+            position: absolute;
+            color: rgba(255, 230, 100, 0.7);
+            font-size: 2rem;
+            z-index: 1;
+            animation: fall linear infinite;
+            text-shadow: 0 0 5px rgba(255, 100, 0, 0.5);
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                font-size: 1.4rem;
+                padding: 1.2rem;
+            }
+            
+            .btn i {
+                font-size: 1.8rem;
+            }
+            
+            .logo {
+                width: 130px;
+                height: 130px;
+            }
+            
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .footer {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="haori-pattern"></div>
+    <div class="vignette"></div>
+    <div class="lightning"></div>
+    
+    <div class="thunder-element">⚡</div>
+    <div class="thunder-element">⚡</div>
+    <div class="thunder-element">⚡</div>
+    <div class="thunder-element">⚡</div>
+    <div class="thunder-element">⚡</div>
+    <div class="thunder-element">⚡</div>
+    
+    <!-- Создаем падающие листья -->
+    <script>
+        for (let i = 0; i < 15; i++) {
+            const leaf = document.createElement('div');
+            leaf.classList.add('leaf');
+            leaf.innerHTML = '❁';
+            leaf.style.left = `${Math.random() * 100}vw`;
+            leaf.style.animationDuration = `${Math.random() * 10 + 10}s`;
+            leaf.style.animationDelay = `${Math.random() * 5}s`;
+            leaf.style.opacity = Math.random() * 0.5 + 0.3;
+            leaf.style.fontSize = `${Math.random() * 1 + 1.5}rem`;
+            document.body.appendChild(leaf);
+        }
+    </script>
+    
+    <div class="container">
+        <h1 class="title">All Links</h1>
+        
+        <div class="logo">
+            <img src="https://i.pinimg.com/736x/0c/1e/5f/0c1e5f6fbc9c8d3f6f3a4d5e3d8a4f0e.jpg" alt="Zenitsu Icon">
+        </div>
+        
+        <div class="buttons">
+            <a href="https://youtube.com/@twitchdachex11?si=eypxyVnEUJE2xHFo" class="btn youtube" target="_blank">
+                <i class="fab fa-youtube"></i>
+                YouTube
+            </a>
+            
+            <a href="https://t.me/DaCHex1" class="btn telegram" target="_blank">
+                <i class="fab fa-telegram"></i>
+                Telegram
+            </a>
+            
+            <a href="https://www.twitch.tv/dachex11" class="btn twitch" target="_blank">
+                <i class="fab fa-twitch"></i>
+                Twitch
+            </a>
+            
+            <a href="https://www.tiktok.com/@dachex0?_t=ZT-8xsgBdJUiHW&_r=1" class="btn tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i>
+                TikTok
+            </a>
+            
+            <a href="https://web.telegram.org/a/#7997227785" class="btn offer" target="_blank">
+                <i class="fas fa-envelope-open-text"></i>
+                ПРЕДЛОЖКА
+            </a>
+        </div>
+        
+        <div class="footer">⚡ ПОДПИСЫВАЙТЕСЬ НА ЕЖЕДНЕВНЫЙ КОНТЕНТ ⚡</div>
+    </div>
+    
+    <script>
+        // Дополнительная анимация при наведении на кнопки
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'float 4s ease-in-out infinite';
+                }, 10);
+                
+                // Создаем эффект искр
+                for(let i = 0; i < 10; i++) {
+                    const spark = document.createElement('div');
+                    spark.innerHTML = '⚡';
+                    spark.style.position = 'absolute';
+                    spark.style.left = `${Math.random() * 100}%`;
+                    spark.style.top = `${Math.random() * 100}%`;
+                    spark.style.fontSize = `${Math.random() * 1.5 + 1}rem`;
+                    spark.style.opacity = Math.random() * 0.7 + 0.3;
+                    spark.style.animation = `blink ${Math.random() * 0.5 + 0.3}s infinite`;
+                    spark.style.zIndex = '5';
+                    this.appendChild(spark);
+                    
+                    setTimeout(() => {
+                        spark.remove();
+                    }, 700);
+                }
+            });
+        });
+        
+        // Анимация мерцания заголовка
+        const title = document.querySelector('.title');
+        setInterval(() => {
+            title.style.textShadow = `2px 2px 4px rgba(255, 215, 0, ${0.6 + Math.random() * 0.4}), 0 0 ${10 + Math.random() * 10}px rgba(255, 100, 0, 0.5)`;
+        }, 2000);
+    </script>
+</body>
+</html>
